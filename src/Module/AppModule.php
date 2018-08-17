@@ -17,7 +17,6 @@ class AppModule extends AbstractModule
     protected function configure()
     {
         $appDir = dirname(__DIR__, 2);
-        (new Loader($appDir . '/.env'))->parse()->toEnv(true);
         $this->install(new AuraSqlModule($_ENV['DB_DSN'], $_ENV['DB_USER'], $_ENV['DB_PASS'], $_ENV['DB_SLAVE']));
         $this->install(new SqlQueryModule($appDir . '/var/sql'));
         $this->install(new IdentityValueModule);

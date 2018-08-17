@@ -5,7 +5,7 @@ use BEAR\Resource\ResourceObject;
 require dirname(__DIR__) . '/autoload.php';
 
 /* @global string $context */
-$app = (new Bootstrap)->getApp('MyVendor\Ticket', $context, dirname(__DIR__));
+$app = (new App)('MyVendor\Ticket', $context, dirname(__DIR__));
 $request = $app->router->match($GLOBALS, $_SERVER);
 try {
     $page = $app->resource->{$request->method}->uri($request->path)($request->query);
