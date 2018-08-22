@@ -3,6 +3,10 @@ namespace MyVendor\Ticket\Module;
 
 use BEAR\Package\AbstractAppModule;
 use BEAR\Package\PackageModule;
+use BEAR\Resource\Module\JsonSchemaModule;
+use Ray\AuraSqlModule\AuraSqlModule;
+use Ray\IdentityValueModule\IdentityValueModule;
+use Ray\Query\SqlQueryModule;
 
 class AppModule extends AbstractAppModule
 {
@@ -13,6 +17,20 @@ class AppModule extends AbstractAppModule
     {
         $appDir = $this->appMeta->appDir;
         require_once $appDir . '/env.php';
+        $this->install(
+            new AuraSqlModule(
+                getenv('TKT_DB_DSN'),
+                getenv('TKT_DB_USER'),
+                getenv('TKT_DB_PASS'),
+                getenv('TKT_DB_SLAVE')
+            )
+        );
+        $this->install(new SqlQueryModule($appDir . '/var/sql'));
+        $this->install(new IdentityValueModule);
+        $this->install(new JsonSchemaModule(
+            $appDir . '/var/json_schema',
+            $appDir . '/var/json_validate')
+        );
         $this->install(new PackageModule);
     }
 }
