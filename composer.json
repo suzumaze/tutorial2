@@ -5,6 +5,7 @@
     "description": "",
     "require": {
         "php": ">=7.0.0",
+        "ext-pdo": "*",
         "bear/package": "^1.8",
         "josegonzalez/dotenv": "^3.2",
         "robmorgan/phinx": "^0.10.6",
