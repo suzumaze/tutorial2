@@ -6,24 +6,25 @@ use BEAR\Resource\ResourceObject;
 class Index extends ResourceObject
 {
     public $body = [
-        'message' => 'Welcome to the MyVendor.Ticket API !',
+        'message' => 'This is the Tutorial2 REST API',
+        'issue' => 'https://github.com/bearsunday/BEAR.ApiDoc/issues',
         '_links' => [
             'self' => [
                 'href' => '/',
             ],
             'curies' => [
-                'href' => 'http://localhost:8081/rels/{?rel}',
+                'href' => 'rels/{rel}.html',
                 'name' => 'kt',
                 'templated' => true
             ],
             'kt:ticket' => [
-                'href' => '/ticket',
-                'title' => 'tickets item',
+                'href' => '/tickets/{id}',
+                'title' => 'Ticket',
                 'templated' => true
             ],
             'kt:tickets' => [
                 'href' => '/tickets',
-                'title' => 'ticket list'
+                'title' => 'The collection of ticket'
             ]
         ]
     ];

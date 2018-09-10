@@ -11,3 +11,5 @@ phpunit.xml
 !var/log/.gitkeep
 !var/tmp/cache/.gitkeep
 !var/tmp/di/.gitkeep
+tests/Fake/var/tmp
+/docs/api/
