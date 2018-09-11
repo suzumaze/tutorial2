@@ -32,7 +32,7 @@
             "php bin/setup.php"
         ],
         "compile": "bear.compile 'MyVendor\\Ticket' prod-app ./",
-        "doc": "bear.apidoc 'MyVendor\\Ticket' ./ docs/api",
+        "doc": "bear.apidoc 'MyVendor\\Ticket' ./ docs",
         "test": [
             "phpunit"
         ],
