@@ -29,7 +29,7 @@ class Index extends ResourceObject
         ]
     ];
 
-    public function onGet()
+    public function onGet() : ResourceObject
     {
         return $this;
     }

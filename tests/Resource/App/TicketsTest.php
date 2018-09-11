@@ -21,13 +21,12 @@ class TicketsTest extends TestCase
 
     public function testOnPost()
     {
-        $params = [
+        $ro = $this->resource->post('app://self/tickets', [
             'title' => 'title1',
             'status' => 'status1',
             'description' => 'description1',
             'assignee' => 'assignee1'
-        ];
-        $ro = $this->resource->post->uri('app://self/tickets')($params);
+        ]);
         /* @var ResourceObject $ro */
         $this->assertSame(201, $ro->code);
         $this->assertContains('/ticket?id=', $ro->headers['Location']);
