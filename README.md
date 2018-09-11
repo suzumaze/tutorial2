@@ -17,4 +17,6 @@
     composer tests    // run test and quality checks
     composer coverage // test coverage
     composer cs-fix   // fix the coding standard
+    composer compile  // compile
+    composer doc      // build API doc
 
