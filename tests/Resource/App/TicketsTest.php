@@ -27,10 +27,10 @@ class TicketsTest extends TestCase
             'description' => 'description1',
             'assignee' => 'assignee1'
         ];
-        $ro = $this->resource->post->uri('app://self/ticket')($params);
+        $ro = $this->resource->post->uri('app://self/tickets')($params);
         /* @var ResourceObject $ro */
         $this->assertSame(201, $ro->code);
-        $this->assertContains('/ticket', $ro->headers['Location']);
+        $this->assertContains('/ticket?id=', $ro->headers['Location']);
 
         return $ro;
     }

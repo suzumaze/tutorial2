@@ -1,7 +1,8 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
+  "$id": "ticket.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Ticket",
   "type": "object",
-  "id": "ticket.json",
   "properties": {
     "id": {
       "type": "string",

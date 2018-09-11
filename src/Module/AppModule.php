@@ -4,6 +4,7 @@ namespace MyVendor\Ticket\Module;
 use BEAR\Package\AbstractAppModule;
 use BEAR\Package\PackageModule;
 use BEAR\Package\Provide\Router\AuraRouterModule;
+use BEAR\Resource\Module\JsonSchemaLinkHeaderModule;
 use BEAR\Resource\Module\JsonSchemaModule;
 use Ray\AuraSqlModule\AuraSqlModule;
 use Ray\IdentityValueModule\IdentityValueModule;
@@ -28,10 +29,13 @@ class AppModule extends AbstractAppModule
         );
         $this->install(new SqlQueryModule($appDir . '/var/sql'));
         $this->install(new IdentityValueModule);
-        $this->install(new JsonSchemaModule(
-            $appDir . '/var/json_schema',
-            $appDir . '/var/json_validate')
+        $this->install(
+            new JsonSchemaModule(
+                $appDir . '/var/json_schema',
+                $appDir . '/var/json_validate'
+            )
         );
+        $this->install(new JsonSchemaLinkHeaderModule('http://www.example.com/'));
         $this->install(new AuraRouterModule($appDir . '/var/conf/aura.route.php'));
         $this->install(new PackageModule);
     }
