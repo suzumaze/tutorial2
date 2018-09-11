@@ -1,5 +1,5 @@
 {
-    "$id": "http://www.example.com/ticket.json",
+    "$id": "https://bearsunday.github.io/tutorial2/schema/ticket.json",
     "$schema": "http://json-schema.org/draft-07/schema#",
     "title": "Ticket",
     "type": "object",
