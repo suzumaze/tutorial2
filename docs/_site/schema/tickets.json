@@ -1,0 +1,9 @@
+{
+    "$id": "https://bearsunday.github.io/tutorial2/schema/tickets.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Collection of Tickets",
+    "type": "array",
+    "items": {
+        "$ref": "ticket.json"
+    }
+}
