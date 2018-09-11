@@ -6,7 +6,7 @@
     "properties": {
         "id": {
             "type": "string",
-            "description": "The unique identifier for a ticket."
+            "description": "The unique identifier for a ticket"
         },
         "title": {
             "type": "string",

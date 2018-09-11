@@ -57,6 +57,10 @@ class Tickets extends ResourceObject
      * @ReturnCreatedResource
      * @Transactional
      * @Purge(uri="app://self/tickets")
+     *
+     * @param string $title       The title of the ticket
+     * @param string $description The description of the ticket
+     * @param string $assignee    The assignee of the ticket
      */
     public function onPost(
         string $title,
